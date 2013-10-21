@@ -155,7 +155,8 @@
         background: #f4f4f4;
         color: #000;
     }
-    .ic__days .ic__day_state_selected {
+    .ic__days .ic__day_state_selected,
+    .ic__days td:active {
         background: #d35746;
         color: #fff;
     }
