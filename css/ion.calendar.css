@@ -10,6 +10,10 @@
 // ===================================================================================================================*/
 
 /* ic = ion.calendar prefix */
+.ic__fakeInput {
+    display: none;
+}
+
 .ic__container,
 .ic__week-head,
 .ic__week-head td,

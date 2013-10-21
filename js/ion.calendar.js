@@ -425,12 +425,17 @@
                     closePopups();
                 });
 
-                $input.after('<div class="ic__fakeInput" id="ic__fakeInput-' + self.pluginCount +'"></div>');
-                var $fakeInput = $('#ic__fakeInput-' + self.pluginCount);
+                $input.addClass('ic__input');
+
+                var $fakeInput = $input.clone()
+                                        .attr('id', 'ic__fakeInput-' + self.pluginCount)
+                                        .attr('readonly', 'readonly')
+                                        .addClass('ic__fakeInput');
+                $input.after($fakeInput);
 
                 settings.onClick = function(date){
                     $input.prop("value", date);
-                    $fakeInput.html(date);
+                    $fakeInput.val(date);
                     selectedDate = date;
                     setTimeout(function() {
                         closePopups();

@@ -10,7 +10,13 @@
 // ===================================================================================================================*/
 
 /* ic = ion.calendar prefix */
+.ic__input {
+    display: none;
+}
 
+.ic__fakeInput {
+    display: block;
+}
 
 .ic__datepicker {
     position: absolute;
@@ -70,12 +76,4 @@
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
     cursor: pointer;
-}
-
-#datepicker {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
 }

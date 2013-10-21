@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   position: relative;
+  -ms-touch-action: none !important;
 }
 
 html,
