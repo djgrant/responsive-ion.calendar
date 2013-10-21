@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Responsive Date Picker</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/ion.calendar.css">
+  <link rel="stylesheet" href="css/ion.calendar-mobile.css" media="screen and (max-width: 767px)">
+</head>
+<body>
+  <div class="container">
+    <h1>Responsive Date Picker</h1>
+    <input type="text" id="datepicker">
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/ion.calendar.js"></script>
+  <script>
+  $("#datepicker").ionDatePicker({
+    format: "DD/MM/YYYY"
+  });
+  </script>
+</body>
+</html>
