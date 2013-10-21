@@ -62,9 +62,13 @@
     height: 30px;
     line-height: 30px;
     padding: 0 12px;
-    background: #eee;
+    background: #4f4f4f;
     border: 1px solid #000;
     border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
     cursor: pointer;
 }
 
