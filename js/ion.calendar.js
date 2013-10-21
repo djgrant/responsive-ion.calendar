@@ -432,7 +432,9 @@
                     $input.prop("value", date);
                     $fakeInput.html(date);
                     selectedDate = date;
-                    closePopups();
+                    setTimeout(function() {
+                        closePopups();
+                    }, 150);
                 };
 
                 var preparePopup = function(){

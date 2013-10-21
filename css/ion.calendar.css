@@ -135,7 +135,6 @@
         vertical-align: top;
         text-align: center;
         padding: 10px 0 8px;
-
         border: 1px solid #ebebeb;
         color: #757575;
         font-size: 9px; line-height: 1.333;
@@ -145,10 +144,6 @@
         background: #fff;
         cursor: pointer;
     }
-    .ic__days .ic__day:hover {
-        background: #d35746;
-        color: #fff;
-    }
     .ic__days .ic__day-empty {
         background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF7u7u////KNOqmgAAABlJREFUeNpiYGRkZABCCGIA8UAEI4QACDAAAUoAFV5+ydgAAAAASUVORK5CYII=');
     }
@@ -157,6 +152,6 @@
         color: #000;
     }
     .ic__days .ic__day_state_selected {
-        background: #f4f4f4;
-        color: #000;
+        background: #d35746;
+        color: #fff;
     }
