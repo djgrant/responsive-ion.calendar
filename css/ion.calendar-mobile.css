@@ -18,11 +18,14 @@
     left: 0 !important;
     bottom: 0 !important;
     right: 0 !important;
+    z-index: 100;
     width: auto;
     padding: 10px;
     padding-top: 60px;
-    -webkit-transform: translateY(100%);
-    -webkit-transition: -webkit-transform 0.3s ease, visibility 0 0.3s;
+    transform: translateY(100%) translateZ(0);
+    -webkit-transform: translateY(100%) translateZ(0);
+    transition: transform 0.27s ease, visibility 0 0.27s;
+    -webkit-transition: -webkit-transform 0.27s ease, visibility 0 0.27s;
     background: white;
 }
 
@@ -44,6 +47,31 @@
 }
 
 .ic__datepicker.is-open {
-    -webkit-transform: translateY(0);
-    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: transform 0.27s ease;
+    -webkit-transition: -webkit-transform 0.27s ease;
+    transform: translateY(0) translateZ(0);
+    -webkit-transform: translateY(0) translateZ(0);
+}
+
+.ic__close {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 101;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    background: #eee;
+    border: 1px solid #000;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#datepicker {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }

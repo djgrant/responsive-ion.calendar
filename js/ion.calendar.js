@@ -78,7 +78,7 @@
                     $next.off();
                     $month.off();
                     $year.off();
-                    $calendar.empty();
+                    $calendar.find('.ic__container').remove();
 
                     prepareData();
                     prepareCalendar();
@@ -247,7 +247,7 @@
                 };
 
                 var placeCalendar = function(){
-                    $calendar.html(html);
+                    $calendar.append(html);
 
                     $prev = $calendar.find(".ic__prev");
                     $next = $calendar.find(".ic__next");
@@ -375,8 +375,7 @@
 (function($){
     var pluginCount = 0,
         html,
-        $body = $(document.body)
-        $popups = $(".ic__datepicker");
+        $body = $(document.body);
 
     var closePopups = function(){
         $(".ic__datepicker").removeAttr('style');
@@ -426,9 +425,12 @@
                     closePopups();
                 });
 
+                $input.after('<div class="ic__fakeInput" id="ic__fakeInput-' + self.pluginCount +'"></div>');
+                var $fakeInput = $('#ic__fakeInput-' + self.pluginCount);
 
                 settings.onClick = function(date){
                     $input.prop("value", date);
+                    $fakeInput.html(date);
                     selectedDate = date;
                     closePopups();
                 };
@@ -438,6 +440,9 @@
                     $body.append(html);
                     $popup = $("#ic__datepicker-" + self.pluginCount);
                     $popup.ionCalendar(settings);
+
+                    $popup.prepend('<div class="ic__close" id="ic__close-' + self.pluginCount + '">Close</div>');
+                    $close = $('#ic__close-' + self.pluginCount);
 
                     $popup.on("mousedown", function(e){
                         e.stopPropagation();
@@ -452,6 +457,12 @@
                     $input.on("keyup", function(){
                         openPopup();
                     });
+                    $fakeInput.on("click", function() {
+                        openPopup();
+                    });
+                    $close.on('click', function() {
+                        closePopups();
+                    })
                 };
 
                 var openPopup = function(){

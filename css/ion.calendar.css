@@ -36,6 +36,10 @@
     visibility: visible;
 }
 
+.ic__close {
+    display: none;
+}
+
 .ic__container {
     position: relative;
     background: #fff;
