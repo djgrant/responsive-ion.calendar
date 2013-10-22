@@ -382,6 +382,8 @@
         $(".ic__datepicker").removeClass('is-open');
     };
 
+    var isTouch = 'ontouchstart' in window || 'onmsgesturechange' in window;
+
     var methods = {
         init: function(options){
             var settings = $.extend({
@@ -425,17 +427,12 @@
                     closePopups();
                 });
 
-                $input.addClass('ic__input');
-
-                var $fakeInput = $input.clone()
-                                        .attr('id', 'ic__fakeInput-' + self.pluginCount)
-                                        .attr('readonly', 'readonly')
-                                        .addClass('ic__fakeInput');
-                $input.after($fakeInput);
+                if(isTouch) {
+                    $input.attr('readonly', 'readonly');
+                }
 
                 settings.onClick = function(date){
                     $input.prop("value", date);
-                    $fakeInput.val(date);
                     selectedDate = date;
                     setTimeout(function() {
                         closePopups();
@@ -457,29 +454,24 @@
                     $input.on("mousedown", function(e){
                         e.stopPropagation();
                     });
-                    $input.on("focusin", function(){
+                    $input.on("focusin touchend", function(){
                         closePopups();
                         openPopup();
                     });
                     $input.on("keyup", function(){
                         openPopup();
                     });
-                    $fakeInput.on("click", function() {
-                        openPopup();
-                    });
                     $close.on('click', function() {
                         closePopups();
-                    })
+                    });
                 };
 
                 var openPopup = function(){
                     x = parseInt($input.offset().left);
                     y = parseInt($input.offset().top + $input.outerHeight(true));
-                    //w = parseInt($input.outerWidth(true));
 
                     $popup.css("left", x + "px").css("top", y + "px");
                     $popup.addClass('is-open');
-
 
                     currentDate = $input.prop("value");
                     if(currentDate && currentDate !== selectedDate && settings.format.indexOf("L") < 0) {

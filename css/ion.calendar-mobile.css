@@ -10,13 +10,6 @@
 // ===================================================================================================================*/
 
 /* ic = ion.calendar prefix */
-.ic__input {
-    display: none;
-}
-
-.ic__fakeInput {
-    display: block;
-}
 
 .ic__datepicker {
     position: absolute;
