@@ -474,7 +474,7 @@
 
                 var openPopup = function(){
                     x = parseInt($input.offset().left);
-                    y = parseInt($input.offset().top + $input.height());
+                    y = parseInt($input.offset().top + $input.outerHeight(true));
                     //w = parseInt($input.outerWidth(true));
 
                     $popup.css("left", x + "px").css("top", y + "px");
