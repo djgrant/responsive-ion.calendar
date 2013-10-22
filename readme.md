@@ -1,2 +1,4 @@
-# Responsive Date Picker
-A responsive skin for Ion.Calendar 2.0.1
+# Responsive Ion.Calendar
+A slightly modified version of Ion.Calendar datepicker with a responsive skin.
+
+Ultimately I abandoned this project to work on a responsive skin/extension for the jquery ui datepicker.
