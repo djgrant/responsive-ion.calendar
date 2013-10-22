@@ -445,7 +445,7 @@
                     $popup = $("#ic__datepicker-" + self.pluginCount);
                     $popup.ionCalendar(settings);
 
-                    $popup.prepend('<div class="ic__close" id="ic__close-' + self.pluginCount + '">Close</div>');
+                    $popup.prepend('<div class="ic__close" id="ic__close-' + self.pluginCount + '">Cancel</div>');
                     $close = $('#ic__close-' + self.pluginCount);
 
                     $popup.on("mousedown", function(e){
